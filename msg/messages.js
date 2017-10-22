@@ -64,6 +64,8 @@ Blockly.Msg.COLOUR_HUE = '20';
 Blockly.Msg.VARIABLES_HUE = '330';
 /// {{Notranslate}} Hue value for all procedure blocks.
 Blockly.Msg.PROCEDURES_HUE = '290';
+/// {{Notranslate}} Hue value for all procedure blocks.
+Blockly.Msg.DRAWBOT_HUE = '65';
 
 /// default name - A simple, general default name for a variable, preferably short.
 /// For more context, see
@@ -173,6 +175,58 @@ Blockly.Msg.COLOUR_BLEND_COLOUR2 = 'colour 2';
 Blockly.Msg.COLOUR_BLEND_RATIO = 'ratio';
 /// tooltip - See [https://github.com/google/blockly/wiki/Colour#blending-colours https://github.com/google/blockly/wiki/Colour#blending-colours].
 Blockly.Msg.COLOUR_BLEND_TOOLTIP = 'Blends two colours together with a given ratio (0.0 - 1.0).';
+
+// Drawbot Blocks.
+/// block text - Title of initialization block.
+Blockly.Msg.DRAWBOT_INIT_TITLE = 'init';
+/// block input text - The serial port that shall be used.
+Blockly.Msg.DRAWBOT_INIT_PORT = 'port';
+/// tooltip
+Blockly.Msg.DRAWBOT_INIT_TOOLTIP = 'Initialize the drawbot connection.';
+/// url
+Blockly.Msg.DRAWBOT_INIT_HELPURL = 'n/a';
+/// block text - Title of pen up block.
+Blockly.Msg.DRAWBOT_SET_PEN_TITLE = 'set pen';
+/// block text
+Blockly.Msg.DRAWBOT_SET_PEN_UP = 'up';
+/// block text
+Blockly.Msg.DRAWBOT_SET_PEN_DOWN= 'down';
+/// tooltip
+Blockly.Msg.DRAWBOT_SET_PEN_TOOLTIP = 'Lift pen or set it down.';
+/// url
+Blockly.Msg.DRAWBOT_SET_PEN_HELPURL = 'n/a';
+/// block text - Title of erase block.
+Blockly.Msg.DRAWBOT_ERASE_TITLE = 'erase';
+/// tooltip
+Blockly.Msg.DRAWBOT_ERASE_TOOLTIP = 'Erase everything.';
+/// url
+Blockly.Msg.DRAWBOT_ERASE_HELPURL = 'n/a';
+/// block text - Title of set angle block.
+Blockly.Msg.DRAWBOT_SET_ANGLE_TITLE = 'set angle';
+/// ...1
+Blockly.Msg.DRAWBOT_SET_ANGLE_SERVO1 = 'servo1';
+/// ...2
+Blockly.Msg.DRAWBOT_SET_ANGLE_SERVO2 = 'servo2';
+/// tooltip
+Blockly.Msg.DRAWBOT_SET_ANGLE_TOOLTIP = 'Set the angle of the servos.';
+/// url
+Blockly.Msg.DRAWBOT_SET_ANGLE_HELPURL = 'n/a';
+/// block text - Title of goto block.
+Blockly.Msg.DRAWBOT_GOTO_TITLE = 'go to';
+/// ...3
+Blockly.Msg.DRAWBOT_GOTO_X = 'x';
+/// ...4
+Blockly.Msg.DRAWBOT_GOTO_Y = 'y';
+/// tooltip
+Blockly.Msg.DRAWBOT_GOTO_TOOLTIP = 'Drive pen to a given position.';
+/// url
+Blockly.Msg.DRAWBOT_GOTO_HELPURL = 'n/a';
+/// block text - Title of getx block.
+Blockly.Msg.DRAWBOT_GET_TITLE = 'position';
+/// tooltip
+Blockly.Msg.DRAWBOT_GET_TOOLTIP = 'Get the x or y coordinate of the pen.';
+/// url
+Blockly.Msg.DRAWBOT_GET_HELPURL = 'n/a';
 
 // Loop Blocks.
 /// url - Describes 'repeat loops' in computer programs; consider using the translation of the page [https://en.wikipedia.org/wiki/Control_flow http://en.wikipedia.org/wiki/Control_flow].
@@ -789,7 +843,7 @@ Blockly.Msg.TEXT_PROMPT_TYPE_NUMBER = 'prompt for number with message';
 Blockly.Msg.TEXT_PROMPT_TOOLTIP_NUMBER = 'Prompt for user for a number.';
 /// dropdown - Precedes the message with which the user should be prompted for some text.
 /// See [https://github.com/google/blockly/wiki/Text#printing-text
-/// https://github.com/google/blockly/wiki/Text#printing-text].
+// https://github.com/google/blockly/wiki/Text#printing-text].
 Blockly.Msg.TEXT_PROMPT_TOOLTIP_TEXT = 'Prompt for user for some text.';
 
 /// block text - Title of a block that counts the number of instances of
