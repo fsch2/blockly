@@ -99,6 +99,24 @@ class CommandParser():
                 return
             self._model.goto(int(m.groups()[0]), int(m.groups()[1]))
             os.write(self._ptymaster, " - OK".encode() + self.DELIM.encode())
+        # parse move command
+        m = re.match("move ([-\d]+) ([-\d]+)", self.buffer)
+        if m:
+            print(m.groups())
+            pos = self._model.getpos()
+            try:
+                arg0 = int(m.groups()[0])
+                arg1 = int(m.groups()[1])
+                if (not arg0 in range(-pos[0], 1001-pos[0])) or \
+                   (not arg1 in range(-pos[1], 1001-pos[1])):
+                    print(arg0, arg1)
+                    raise ValueException("move arguments must not move outside [0, 1000]")
+            except:
+                os.write(self._ptymaster, " - ERROR".encode() + self.DELIM.encode())
+                self.buffer = ""
+                return
+            self._model.goto(pos[0] + arg0, pos[1] + arg1)
+            os.write(self._ptymaster, " - OK".encode() + self.DELIM.encode())
         # parse drop command
         m = re.match("drop", self.buffer)
         if m:

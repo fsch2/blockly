@@ -52,8 +52,11 @@ def drawbot_command_response(cmd, args=[]):
     return m.groups[0].decode().split()
 
 if __name__ == "__main__":
-    drawbot_init('/dev/pts/5')
+    drawbot_init('/dev/pts/4')
     drawbot_command('goto', ['142', '57'])
     drawbot_command('drop')
     drawbot_command('goto', ['67', '217'])
     drawbot_command('goto', ['807', '280'])
+    drawbot_command('move', ['40', '40'])
+    drawbot_command('move', ['40', '-40'])
+    drawbot_command('move', ['-40', '-40'])
