@@ -152,6 +152,12 @@ button {
   width: 21px;
   background-image: url(icons.png);
 }
+.load {
+  background-position: -63px 0px;
+}
+.save {
+  background-position: -84px 0px;
+}
 .trash {
   background-position: 0px 0px;
 }

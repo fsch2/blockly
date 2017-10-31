@@ -378,6 +378,12 @@ Code.init = function() {
   };
   window.addEventListener('resize', onresize, false);
 
+  new QWebChannel(	    
+    qt.webChannelTransport, function (channel) {
+      window.qthandler = channel.objects.qthandler;
+    }
+  );
+
   // The toolbox XML specifies each category name using Blockly's messaging
   // format (eg. `<category name="%{BKY_CATLOGIC}">`).
   // These message keys need to be defined in `Blockly.Msg` in order to
@@ -423,21 +429,16 @@ Code.init = function() {
 
   Code.tabClick(Code.selected);
 
+  Code.bindClick('loadButton',
+      function() {Code.loadBlocksFromFile(); Code.renderContent();});
+
+  Code.bindClick('saveButton',
+      function() {Code.saveBlocksToFile(); Code.renderContent();});
+
   Code.bindClick('trashButton',
       function() {Code.discard(); Code.renderContent();});
+
   Code.bindClick('runButton', Code.runJS);
-  // Disable the link button if page isn't backed by App Engine storage.
-  var linkButton = document.getElementById('linkButton');
-  if ('BlocklyStorage' in window) {
-    BlocklyStorage['HTTPREQUEST_ERROR'] = MSG['httpRequestError'];
-    BlocklyStorage['LINK_ALERT'] = MSG['linkAlert'];
-    BlocklyStorage['HASH_ERROR'] = MSG['hashError'];
-    BlocklyStorage['XML_ERROR'] = MSG['xmlError'];
-    Code.bindClick(linkButton,
-        function() {BlocklyStorage.link(Code.workspace);});
-  } else if (linkButton) {
-    linkButton.className = 'disabled';
-  }
 
   for (var i = 0; i < Code.TABS_.length; i++) {
     var name = Code.TABS_[i];
@@ -491,7 +492,6 @@ Code.initLanguage = function() {
   document.getElementById('title').textContent = MSG['title'];
   document.getElementById('tab_blocks').textContent = MSG['blocks'];
 
-  document.getElementById('linkButton').title = MSG['linkTooltip'];
   document.getElementById('runButton').title = MSG['runTooltip'];
   document.getElementById('trashButton').title = MSG['trashTooltip'];
 };
@@ -530,6 +530,22 @@ Code.discard = function() {
     }
   }
 };
+
+/**
+ * Save blocks to a file on disk in XML format.
+ */
+Code.saveBlocksToFile = function() {
+  var xml = Blockly.Xml.workspaceToDom(Code.workspace);
+  var text = Blockly.Xml.domToText(xml);
+  window.qthandler.save(text)
+}
+
+/**
+ * Load blocks to a file on disk in XML format.
+ */
+Code.loadBlocksFromFile = function() {
+  window.qthandler.load()
+}
 
 // Load the Code demo's language strings.
 document.write('<script src="msg/' + Code.LANG + '.js"></script>\n');
