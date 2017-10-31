@@ -147,6 +147,35 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
 	"extensions": ["parent_tooltip_when_inline"]
     },
 
+    // Block for moving the pen incrementally.
+    {
+	"type": "drawbot_move",
+	"message0": "%{BKY_DRAWBOT_MOVE_TITLE} %1 %{BKY_DRAWBOT_MOVE_DX} %2 %{BKY_DRAWBOT_MOVE_DY} %3",
+	"args0": [
+	    {
+		"type": "input_dummy"
+	    },
+	    {
+		"type": "input_value",
+		"name": "dx",
+		"check": "Number",
+		"align": "RIGHT"
+	    },
+	    {
+		"type": "input_value",
+		"name": "dy",
+		"check": "Number",
+		"align": "RIGHT"
+	    }
+	],
+	"previousStatement": null,
+	"nextStatement": null,
+	"colour": "%{BKY_DRAWBOT_HUE}",
+	"helpUrl": "%{BKY_DRAWBOT_MOVE_HELPURL}",
+	"tooltip": "%{BKY_DRAWBOT_MOVE_TOOLTIP}",
+	"extensions": ["parent_tooltip_when_inline"]
+    },
+
     // Block for getting the x or y coordinate.
     {
 	"type": "drawbot_get",

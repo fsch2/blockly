@@ -70,6 +70,13 @@ Blockly.Python['drawbot_goto'] = function(block) {
     return code;
 };
 
+Blockly.Python['drawbot_move'] = function(block) {
+    var value_dx = Blockly.Python.valueToCode(block, 'dx', Blockly.Python.ORDER_NONE);
+    var value_dy = Blockly.Python.valueToCode(block, 'dy', Blockly.Python.ORDER_NONE);
+    var code = 'drawbot_command("move",[' + value_dx + ',' + value_dy + '])\n';
+    return code;
+};
+
 Blockly.Python['drawbot_get'] = function(block) {
     var coordinate = block.getFieldValue('coordinate');
     var code = 'drawbot_command_response("get")';

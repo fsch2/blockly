@@ -221,7 +221,17 @@ Blockly.Msg.DRAWBOT_GOTO_Y = 'y';
 Blockly.Msg.DRAWBOT_GOTO_TOOLTIP = 'Drive pen to a given position.';
 /// url
 Blockly.Msg.DRAWBOT_GOTO_HELPURL = 'n/a';
-/// block text - Title of getx block.
+/// block text - Title of move block.
+Blockly.Msg.DRAWBOT_MOVE_TITLE = 'move by';
+/// ...3
+Blockly.Msg.DRAWBOT_MOVE_DX = 'dx';
+/// ...4
+Blockly.Msg.DRAWBOT_MOVE_DY = 'dy';
+/// tooltip
+Blockly.Msg.DRAWBOT_MOVE_TOOLTIP = 'Move pen incrementally by given amount.';
+/// url
+Blockly.Msg.DRAWBOT_MOVE_HELPURL = 'n/a';
+/// block text - Title of get block.
 Blockly.Msg.DRAWBOT_GET_TITLE = 'position';
 /// tooltip
 Blockly.Msg.DRAWBOT_GET_TOOLTIP = 'Get the x or y coordinate of the pen.';
