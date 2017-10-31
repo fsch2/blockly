@@ -2,25 +2,32 @@ import os.path
 import traceback
 
 from PyQt5.QtCore import QUrl, Qt, QEvent, QObject, pyqtSlot
-from PyQt5.QtWidgets import QApplication
+from PyQt5.QtWidgets import QApplication, QFileDialog
 from PyQt5.QtWebEngineWidgets import QWebEngineView
 from PyQt5.QtWebChannel import QWebChannel
-
-PATH = "domsave.xml"
 
 class QtHandler(QObject):
 
     @pyqtSlot(str)
     def save(self, xml):
-        with open(PATH, "w+") as f:
-            f.write(xml)
+        filename, _ = QFileDialog.getSaveFileName(None,"Save Blocks","blocks.xml","All Files (*);;XML Files (*.xml)")
+        if filename:
+            print("Saving to filename {}.".format(filename.__repr__()))
+            with open(filename, "w+") as f:
+                  f.write(xml)
 
     @pyqtSlot()
     def load(self):
-        with open(PATH, "r") as f:
-            xml = f.read()
-            view.page().runJavaScript("Code.loadBlocks('{}');".format(xml))
+        filename, _ = QFileDialog.getOpenFileName(None,"Load Blocks", "","All Files (*);;XML Files (*.xml)")
+        if filename:
+            print("Loading from filename {}.".format(filename.__repr__()))
+            with open(filename, "r") as f:
+                xml = f.read()
+                view.page().runJavaScript("Code.loadBlocks('{}');".format(xml))
 
+    @pyqtSlot()
+    def run(self):
+        view.page().runJavaScript("Blockly.Python.workspaceToCode(Code.workspace);", run_code)
 
 class Filter(QObject):
 

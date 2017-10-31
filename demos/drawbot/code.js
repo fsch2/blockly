@@ -438,7 +438,7 @@ Code.init = function() {
   Code.bindClick('trashButton',
       function() {Code.discard(); Code.renderContent();});
 
-  Code.bindClick('runButton', Code.runJS);
+  Code.bindClick('runButton', Code.runPython);
 
   for (var i = 0; i < Code.TABS_.length; i++) {
     var name = Code.TABS_[i];
@@ -491,30 +491,18 @@ Code.initLanguage = function() {
   document.title += ' ' + MSG['title'];
   document.getElementById('title').textContent = MSG['title'];
   document.getElementById('tab_blocks').textContent = MSG['blocks'];
-
+    
+  document.getElementById('loadButton').title = MSG['loadTooltip'];
+  document.getElementById('saveButton').title = MSG['saveTooltip'];
   document.getElementById('runButton').title = MSG['runTooltip'];
   document.getElementById('trashButton').title = MSG['trashTooltip'];
 };
 
 /**
  * Execute the user's code.
- * Just a quick and dirty eval.  Catch infinite loops.
  */
-Code.runJS = function() {
-  Blockly.JavaScript.INFINITE_LOOP_TRAP = '  checkTimeout();\n';
-  var timeouts = 0;
-  var checkTimeout = function() {
-    if (timeouts++ > 1000000) {
-      throw MSG['timeout'];
-    }
-  };
-  var code = Blockly.JavaScript.workspaceToCode(Code.workspace);
-  Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
-  try {
-    eval(code);
-  } catch (e) {
-    alert(MSG['badCode'].replace('%1', e));
-  }
+Code.runPython = function() {
+  window.qthandler.run()
 };
 
 /**
