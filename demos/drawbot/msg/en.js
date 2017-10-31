@@ -1,6 +1,8 @@
 var MSG = {
   title: "Code",
   blocks: "Blocks",
+  loadTooltip: "Load program from file",
+  saveTooltip: "Save program to file",
   linkTooltip: "Save and link to blocks.",
   runTooltip: "Run the program defined by the blocks in the workspace.",
   badCode: "Program error:\n%1",

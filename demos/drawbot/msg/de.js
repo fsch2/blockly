@@ -1,6 +1,8 @@
 var MSG = {
   title: "Code",
   blocks: "Bausteine",
+  loadTooltip: "Programm aus Datei laden.",
+  saveTooltip: "Programm in Datei speichern.",
   linkTooltip: "Speichern und auf Bausteine verlinken.",
   runTooltip: "Das Programm ausführen, das von den Bausteinen im Arbeitsbereich definiert ist.",
   badCode: "Programmfehler:\n%1",
@@ -14,6 +16,7 @@ var MSG = {
   catColour: "Farbe",
   catVariables: "Variablen",
   catFunctions: "Funktionen",
+  catDrawbot: "Drawbot",
   listVariable: "Liste",
   textVariable: "Text",
   httpRequestError: "Mit der Anfrage gab es ein Problem.",
