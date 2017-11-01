@@ -1,7 +1,7 @@
 import os.path
 import traceback
 
-from PyQt5.QtCore import QUrl, Qt, QEvent, QObject, pyqtSlot
+from PyQt5.QtCore import QUrl, Qt, QEvent, QObject, pyqtSlot, pyqtRemoveInputHook
 from PyQt5.QtWidgets import QApplication, QFileDialog
 from PyQt5.QtWebEngineWidgets import QWebEngineView
 from PyQt5.QtWebChannel import QWebChannel
@@ -44,15 +44,17 @@ class Filter(QObject):
 
 
 def run_code(src):
-    print(src.strip())
+    print(src.strip(), "\n")
+    ns = {}
     try:
         code = compile(src, '<string>', 'exec')
-        exec(code)
+        exec(code, ns, ns)
     except Exception as e:
         traceback.print_exc()
         
 
 app = QApplication([])
+#pyqtRemoveInputHook()
 filt = Filter()
 app.installEventFilter(filt)
 view = QWebEngineView()
