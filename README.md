@@ -16,5 +16,5 @@ This is a tiny web application using Google Blockly, a "web-based visual program
 3. To run the Drawbot mock, run 'python3 qt_pts_drawbot.py'
 
 ## Examples
-![alt text](http://placekitten.com/200/300 "Logo Title Text 1")
-![alt text](http://placekitten.com/200/300 "Logo Title Text 1")
+![](https://github.com/fsch2/blockly/raw/master/doc/kochflake3.png)
+![](https://github.com/fsch2/blockly/raw/master/doc/kochflake4.png)
