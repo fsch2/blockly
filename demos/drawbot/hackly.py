@@ -1,6 +1,11 @@
 import os.path
 import traceback
 
+# Use this to workaounrd Nvidia problems
+#import ctypes
+#import ctypes.util
+#ctypes.CDLL(ctypes.util.find_library("GL"), mode=ctypes.RTLD_GLOBAL)
+
 from PyQt5.QtCore import QUrl, Qt, QEvent, QObject, pyqtSlot, pyqtRemoveInputHook
 from PyQt5.QtWidgets import QApplication, QFileDialog
 from PyQt5.QtWebEngineWidgets import QWebEngineView
