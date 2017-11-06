@@ -92,3 +92,10 @@ Blockly.Python['drawbot_get'] = function(block) {
     }
     return [code, Blockly.Python.ORDER_FUNCTION_CALL];
 };
+
+Blockly.Python['drawbot_delay'] = function(block) {
+    Blockly.Python.definitions_['import_sleep'] = 'import time\n';
+    var value_delaysecs = Blockly.Python.valueToCode(block, 'delaysecs', Blockly.Python.ORDER_NONE);
+    var code = 'drawbot_delay' + '(' + value_delaysecs + ')\n';
+    return code;
+};

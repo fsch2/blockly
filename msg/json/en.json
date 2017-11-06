@@ -1,7 +1,7 @@
 {
 	"@metadata": {
 		"author": "Ellen Spertus <ellen.spertus@gmail.com>",
-		"lastupdated": "2017-11-01 20:53:51.539968",
+		"lastupdated": "2017-11-06 11:50:51.593578",
 		"locale": "en",
 		"messagedocumentation" : "qqq"
 	},
@@ -83,6 +83,10 @@
 	"DRAWBOT_GET_TITLE": "position",
 	"DRAWBOT_GET_TOOLTIP": "Get the x or y coordinate of the pen.",
 	"DRAWBOT_GET_HELPURL": "n/a",
+	"DRAWBOT_DELAY_TITLE": "wait for",
+	"DRAWBOT_DELAY_TITLE2": "seconds",
+	"DRAWBOT_DELAY_TOOLTIP": "Wait the specified number of seconds before continuing.",
+	"DRAWBOT_DELAY_HELPURL": "n/a",
 	"CONTROLS_REPEAT_HELPURL": "https://en.wikipedia.org/wiki/For_loop",
 	"CONTROLS_REPEAT_TITLE": "repeat %1 times",
 	"CONTROLS_REPEAT_INPUT_DO": "do",

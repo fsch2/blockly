@@ -218,6 +218,28 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
 	"helpUrl": "%{BKY_DRAWBOT_ERASE_HELPURL}",
 	"tooltip": "%{BKY_DRAWBOT_ERASE_TOOLTIP}",
 	"extensions": ["parent_tooltip_when_inline"]
+    },
+
+    // Block for introducing a delay.
+    {
+	"type": "drawbot_delay",
+	"message0": "%{BKY_DRAWBOT_DELAY_TITLE} %1 %2 %{BKY_DRAWBOT_DELAY_TITLE2}",
+	"args0": [
+	    {
+		"type": "input_dummy"
+	    },
+	    {
+		"type": "input_value",
+		"name": "delaysecs",
+		"check": "Number"
+	    }
+	],
+	"previousStatement": null,
+	"nextStatement": null,
+	"colour": "%{BKY_DRAWBOT_HUE}",
+	"helpUrl": "%{BKY_DRAWBOT_DELAY_HELPURL}",
+	"tooltip": "%{BKY_DRAWBOT_DELAY_TOOLTIP}",
+	"extensions": ["parent_tooltip_when_inline"]
     }
     
 ]);  // END JSON EXTRACT (Do not delete this comment.)

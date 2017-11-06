@@ -237,6 +237,14 @@ Blockly.Msg.DRAWBOT_GET_TITLE = 'position';
 Blockly.Msg.DRAWBOT_GET_TOOLTIP = 'Get the x or y coordinate of the pen.';
 /// url
 Blockly.Msg.DRAWBOT_GET_HELPURL = 'n/a';
+/// block text - Title of get block.
+Blockly.Msg.DRAWBOT_DELAY_TITLE = 'wait for';
+/// block text - Units
+Blockly.Msg.DRAWBOT_DELAY_TITLE2 = 'seconds';
+/// tooltip
+Blockly.Msg.DRAWBOT_DELAY_TOOLTIP = 'Wait the specified number of seconds before continuing.';
+/// url
+Blockly.Msg.DRAWBOT_DELAY_HELPURL = 'n/a';
 
 // Loop Blocks.
 /// url - Describes 'repeat loops' in computer programs; consider using the translation of the page [https://en.wikipedia.org/wiki/Control_flow http://en.wikipedia.org/wiki/Control_flow].

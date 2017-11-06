@@ -1,3 +1,5 @@
+import sys
+import time
 import serial
 import streamexpect
 
@@ -51,12 +53,21 @@ def drawbot_command_response(cmd, args=[]):
         print("Command {}, arguments {} failed!".format(cmd, args))
     return m.groups[0].decode().split()
 
+def drawbot_delay(delaysecs):
+    print("Wait a few seconds", end="")
+    for i in range(int(delaysecs)):
+        print(".", end="")
+        sys.stdout.flush()
+        time.sleep(1)
+    print("")
+
 if __name__ == "__main__":
-    drawbot_init('/dev/pts/4')
+    drawbot_init('/dev/pts/9')
     drawbot_command('goto', ['142', '57'])
     drawbot_command('drop')
     drawbot_command('goto', ['67', '217'])
     drawbot_command('goto', ['807', '280'])
+    drawbot_delay(3.2)
     drawbot_command('move', ['40', '40'])
     drawbot_command('move', ['40', '-40'])
     drawbot_command('move', ['-40', '-40'])
