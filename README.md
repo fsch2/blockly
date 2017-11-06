@@ -23,5 +23,5 @@ This is a tiny web application using Google Blockly, a "web-based visual program
 
 | Sierpinski Arrowhead Curve Order 6  | Hilbert Curve Order 4            |
 |:-----------------------------------:|:--------------------------------:|
-| ![](https://github.com/fsch2/blockly/raw/master/doc/arrowhead3.png) | ![](https://github.com/fsch2/blockly/raw/master/doc/hilbert4.png) |
+| ![](https://github.com/fsch2/blockly/raw/master/doc/arrowhead6.png) | ![](https://github.com/fsch2/blockly/raw/master/doc/hilbert4.png) |
 
