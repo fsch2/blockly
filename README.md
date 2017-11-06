@@ -17,11 +17,11 @@ This is a tiny web application using Google Blockly, a "web-based visual program
 
 ## Examples
 
-Koch Snowflake Order 3:
-![](https://github.com/fsch2/blockly/raw/master/doc/kochflake3.png)
+| Koch Snowflake Order 3              | Koch Snowflake Order 4           |
+|:-----------------------------------:|:--------------------------------:|
+| ![](https://github.com/fsch2/blockly/raw/master/doc/kochflake3.png) | ![](https://github.com/fsch2/blockly/raw/master/doc/kochflake4.png) |
 
-Koch Snowflake Order 4:
-![](https://github.com/fsch2/blockly/raw/master/doc/kochflake4.png)
+| Sierpinski Arrowhead Curve Order 6  | Hilbert Curve Order 4            |
+|:-----------------------------------:|:--------------------------------:|
+| ![](https://github.com/fsch2/blockly/raw/master/doc/arrowhead3.png) | ![](https://github.com/fsch2/blockly/raw/master/doc/hilbert4.png) |
 
-Sierpinski Arrowhead Curve Order 6:
-![](https://github.com/fsch2/blockly/raw/master/doc/arrowhead6.png)
